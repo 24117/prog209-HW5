@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Movie</title>
+  <!--<link rel="stylesheet" type="text/css" href="style.css" /> -->
+</head>
+
+<body>
+
+  <form name="mainFrom" onsubmit="return false">
+
+    <fieldset id="custInfo">
+      <legend>Movie Ranking </legend>
+
+      <label for="title"> Name:</label>
+      <input name="title" id="title" placeholder="shrek" type="text" />
+      <br/>
+      <label for="ranking">Ranking:</label>
+      <input name="ranking" id="ranking" placeholder="3" type="text" />
+      <input type="submit" value="Add Movie" onclick="addMovieClicked()">
+
+      <br/>
+      <br/>
+      <input type="submit" value="Show Movies" onclick="showMoviesClicked()">
+
+    </fieldset>
+
+    <fieldset id="movielist">
+        <div id = "moviecount">
+        </div>
+        <div id="movieLi">
+        </div>
+    </fieldset>
+
+  </form>
+  <!-- <script type="text/javascript" src="movie.js"></script> -->
+  <script type="text/javascript" src="main.js"></script> 
+
+</body>
+
+</html>
