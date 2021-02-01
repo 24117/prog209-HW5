@@ -58,6 +58,9 @@ function showMoviesClicked() {
     // clear previous message
     myUl.innerHTML = "";
 
+    // sort movies by ranking
+    movieList.sort(compareRanking);
+
     // add each Movie to li
     document.getElementById('movieLi').appendChild(myUl);
     for (let i = 0; i < movieList.length; i++) {
@@ -71,31 +74,7 @@ function showMoviesClicked() {
 }
 
 
-/* 
-var output = document.getElementById("output"); // Get element reference for displaying results
+function compareRanking(a, b) {
+    return b.ranking - a.ranking;
+}
 
-// Robot object constructor; name is capital R by convention, helps you spot a constructor from other functions
-// also notice the use of the "this" key word
-//The this Keyword, in JavaScript, the thing called this is the object that "owns" the code.
-// The value of this, when used in an object, is the object itself.
-// In a constructor function this does not have a value.
-// It is a substitute for the new object.
-// The value of this will become the new object when a new object is created.
-
-var Robot = function (name, year, owner) {
-    this.name = name;
-    this.year = year;
-    this.owner = owner;
-    this.niceText = function () { return name + "  " + year + "  " + owner }
-};  // end object constructor
-
-// Create instances of Robot objects
-// All instances of Robot will have these common properties and methods
-var robby = new Robot("Robby", 1956, "Dr. Morbius");
-var rosie = new Robot("Rosie", 1962, "George Jetson");
-var r2d2 = new Robot("R2-D2", 1977, " Anakin Skywalker");
-
-// Display properties of Robot instances
-output.innerHTML += robby.name + " " + robby.year + " " + robby.owner + "<br><br>";
-output.innerHTML += rosie.name + " " + rosie.year + " " + rosie.owner + "<br><br>";
-output.innerHTML += r2d2.niceText(); */
