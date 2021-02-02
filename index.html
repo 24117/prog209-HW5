@@ -4,38 +4,43 @@
 <head>
   <meta charset="UTF-8">
   <title>Movie</title>
-  <!--<link rel="stylesheet" type="text/css" href="style.css" /> -->
+  <link rel="stylesheet" type="text/css" href="style.css" /> 
 </head>
 
 <body>
 
   <form name="mainForm" onsubmit="return false">
 
+    <!-- form to add movie info with title and rating-->
     <fieldset id="movieInfo">
-      <legend>Movie Ranking </legend>
+      <legend>Movie Rating </legend>
 
       <label for="title"> Name:</label>
       <input name="title" id="title" placeholder="shrek" type="text" />
       <br/>
-      <label for="ranking">Ranking:</label>
-      <input name="ranking" id="ranking" placeholder="3" type="text" />
+      <label for="rating">Rating:</label>
+      <input name="rating" id="rating" placeholder="3" type="text" />
+      <!-- adding the given movie to the list-->
       <input type="submit" value="Add Movie" onclick="addMovieClicked()">
 
       <br/>
       <br/>
+      <!-- displaying the list of movies including title and rating-->
       <input type="submit" value="Show Movies" onclick="showMoviesClicked()">
 
     </fieldset>
 
     <fieldset id="movielist">
+      <!-- displaying the current count of movies that has been added-->
         <div id = "moviecount">
         </div>
+        <!-- displaying the list of movies sorted by rating (5 being a good moive to 1)-->
         <div id="movieLi">
         </div>
     </fieldset>
 
   </form>
-  <!-- <script type="text/javascript" src="movie.js"></script> -->
+  <script type="text/javascript" src="movie.js"></script>
   <script type="text/javascript" src="main.js"></script> 
 
 </body>

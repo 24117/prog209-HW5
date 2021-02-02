@@ -1,6 +1,4 @@
 let movieList = [];
-const MinRanking = 1;
-const MaxRanking = 5;
 
 let myUl;
 
@@ -11,32 +9,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 })
 
-let Movie = function (title, ranking) {
-    this.title = title;
-    this.ranking = ranking;
-    this.validateFields = function () { 
-        // 1. return false if title is empty
-        if(title.trim().length ===0)
-            return false;
-        // 2. return false if ranking is empty or out of range from 1 to 5
-        else if(ranking.trim().length === 0|| isNaN(parseInt(ranking)))
-            return false;
-        else if(parseInt(ranking) < MinRanking ||  parseInt(ranking) > MaxRanking)
-            return false;
-        else 
-            return true;}
-    this.toString = function() { return title + " " + ranking}
-};  // end object constructor
-
-
 
 function addMovieClicked() {
     myUl.innerHTML = "";
 
     let title = document.getElementById("title").value;
-    let ranking = document.getElementById("ranking").value;
+    let rating = document.getElementById("rating").value;
 
-    let movie = new Movie(title, ranking);
+    let movie = new Movie(title, rating);
 
     if (movie.validateFields()) {    
         movieList.push(movie);  
@@ -48,7 +28,7 @@ function addMovieClicked() {
 
         // clear previous user input
         document.getElementById("title").value = "";
-        document.getElementById("ranking").value = "";
+        document.getElementById("rating").value = "";
     } else {
         alert("The data is not correct. No movie data is saved. please fill in all fields correctly");
     }
@@ -58,8 +38,8 @@ function showMoviesClicked() {
     // clear previous message
     myUl.innerHTML = "";
 
-    // sort movies by ranking
-    movieList.sort(compareRanking);
+    // sort movies by rating
+    movieList.sort(compareRating);
 
     // add each Movie to li
     document.getElementById('movieLi').appendChild(myUl);
@@ -74,7 +54,7 @@ function showMoviesClicked() {
 }
 
 
-function compareRanking(a, b) {
-    return b.ranking - a.ranking;
+function compareRating(a, b) {
+    return b.rating - a.rating;
 }
 
