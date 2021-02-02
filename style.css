@@ -1,0 +1,16 @@
+body {
+    background-color: #CCFFFF; 
+    color: darkcyan;
+}
+
+#movieInfo {
+    background-color: #8af5f5; 
+    color: rgb(4, 97, 97);
+}
+
+#movielist {
+    font-size: 20px;
+    color: rgb(4, 97, 97);
+    background-color: #8af5f5; 
+    margin-top: 20px;
+}
